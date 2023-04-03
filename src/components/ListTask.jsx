@@ -1,13 +1,10 @@
 import {useState} from 'react'
+import Task from './Task';
 
 function ListTask({data, dlt}){
-    console.log(data)
 
     return <div>
-        {data.map((e, index)=> <div key={index}>
-            <h3>{e.task}</h3>
-            <button onClick={()=>dlt(e.task)}>Borrar</button>
-        </div> )}
+        {data.map((e, index)=> <Task task={e.task} dlt={dlt} key={index} /> )}
     </div>
 }
 
